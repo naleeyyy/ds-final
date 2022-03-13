@@ -35,6 +35,12 @@ main {
   gap: 2rem;
 }
 
+h2 {
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+}
+
 .gradient-text {
   background-color: #f3ec78;
   background-image: radial-gradient(
@@ -44,6 +50,7 @@ main {
   );
   background-size: 100%;
   -webkit-background-clip: text;
+  background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
@@ -61,7 +68,7 @@ main {
 }
 
 .header {
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 2rem 2rem 2rem 1rem;
 }
 
@@ -74,6 +81,11 @@ main {
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.027);
   backdrop-filter: blur(5px);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 10px 10px 2px rgba(255, 255, 255, 0.041);
 }
 
 .text-left {
@@ -109,9 +121,49 @@ main {
   padding: 0.75rem 2rem;
 }
 
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+  }
+}
+
 @media screen and (max-width: 550px) {
   main {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
+  }
+
+  h2 {
+    margin-top: 0;
   }
 }
