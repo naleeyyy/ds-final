@@ -9,7 +9,7 @@ const renderer = new THREE.WebGLRenderer({
 
 const main = document.querySelector('main')
 
-renderer.setPixelRatio( window.devicePixelRatio )
+renderer.setPixelRatio( window.devicePixelRatio / 1 ) // change number to set quality
 renderer.setSize( window.innerWidth, window.innerHeight ) 
 
 renderer.shadowMap.enabled = true;
@@ -24,7 +24,7 @@ window.addEventListener('resize', () => {
 })
 
 const geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16 );
-const material = new THREE.MeshPhongMaterial({ wireframe: true })
+const material = new THREE.MeshPhongMaterial({ wireframe: true, color: 'white' })
 const obj = new THREE.Mesh( geometry, material );
 
 obj.castShadow = true
