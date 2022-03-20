@@ -33,7 +33,8 @@ obj.receiveShadow = true
 scene.add( obj );
 
 const lightcolor = 0xffffff
-const light = new THREE.PointLight(lightcolor, 1)
+// second number is light intensity
+const light = new THREE.PointLight(lightcolor, 0.625)
 light.position.set(0, 0, 30)
 light.castShadow = true; 
 scene.add( light )
@@ -62,11 +63,15 @@ document.onmousemove = (event) => {
     mouseY = ((event.pageY / window.innerHeight - 0.5) * (-1)) * 4;
 }
 
+// factor for light and ammount of x movement
+let factor = 2.5;
+
 function animate() {
 	requestAnimationFrame( animate );
     
-    light.position.set(mouseX * 2, mouseY , 30)
-    
+    light.position.set(mouseX * factor, mouseY , 30)
+    light.intensity = mouseX < 0 ? factor - (mouseX * - 1) : factor - mouseX
+
     camera.position.x = mouseX / -2;
     camera.position.y = mouseY / -2;
 

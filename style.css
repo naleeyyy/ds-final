@@ -52,21 +52,6 @@ main {
   height: 100%;
 }
 
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 25vw;
-  height: 100%;
-  border: 1px solid red;
-  z-index: 2;
-}
-
-.hidden-menu {
-  left: -25vw;
-  transition: left 0.5s ease-in-out;
-}
-
 .overlay {
   background: rgba(0, 0, 0, 0.4);
   position: fixed;
@@ -76,16 +61,28 @@ main {
 }
 
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 4; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%; 
+  width: 0; 
+  position: fixed; 
+  z-index: 4; 
+  top: 0; 
   left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: #111; 
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidenav-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out;
+  color: #818181;
 }
 
 .sidenav a {
